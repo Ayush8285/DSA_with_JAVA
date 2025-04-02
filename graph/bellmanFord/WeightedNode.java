@@ -25,5 +25,12 @@ public class WeightedNode implements Comparable<WeightedNode> {
     return this.distance - o.distance;
   }
 
+  public ArrayList<WeightedNode> getNeighbors() {
+    return neighbors;
+  }
+
+  public HashMap<WeightedNode, Integer> getWeightMap() {
+    return weightMap;
+  }
 
 }

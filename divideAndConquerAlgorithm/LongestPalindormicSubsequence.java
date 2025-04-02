@@ -1,5 +1,14 @@
 public class LongestPalindormicSubsequence {
-  private int findLPSLength(String st, int startIndex, int endIndex) {
+
+  public static void main(String[] args) {
+    String st = "abdbca";
+    System.out.println("Length of LPS is: " + findLPSLength(st));
+    st = "cddpd";
+    System.out.println("Length of LPS is: " + findLPSLength(st));
+    st = "pqr";
+    System.out.println("Length of LPS is: " + findLPSLength(st));
+  }
+  private static int findLPSLength(String st, int startIndex, int endIndex) {
     if (startIndex > endIndex) {
       return 0;
     }
@@ -17,7 +26,7 @@ public class LongestPalindormicSubsequence {
     return Math.max(count1, Math.max(count2, count3));
   }
 
-  public int findLPSLength(String st) {
+  public static int findLPSLength(String st) {
     return findLPSLength(st, 0, st.length()-1);
   }
 }

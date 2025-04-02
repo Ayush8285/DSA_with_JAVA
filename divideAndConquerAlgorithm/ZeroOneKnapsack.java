@@ -1,5 +1,17 @@
 public class ZeroOneKnapsack {
- private int knapSack(int[] profits, int[] weights, int capacity, int currentIndex) {
+  public static void main(String[] args) {
+    int[] profits = {1, 6, 10, 16};
+    int[] weights = {1, 2, 3, 5};
+    int capacity = 7;
+    System.out.println("Maximum profit is: " + knapSack(profits, weights, capacity));
+    capacity = 6;
+    System.out.println("Maximum profit is: " + knapSack(profits, weights, capacity));
+    capacity = 5;
+    System.out.println("Maximum profit is: " + knapSack(profits, weights, capacity));
+    capacity = 4;
+    System.out.println("Maximum profit is: " + knapSack(profits, weights, capacity));
+  }
+ private static int knapSack(int[] profits, int[] weights, int capacity, int currentIndex) {
    if (capacity <= 0 || currentIndex < 0 || currentIndex >= profits.length) {
      return 0;
    }
@@ -11,7 +23,7 @@ public class ZeroOneKnapsack {
    return Math.max(profit1, profit2);
  }
 
- public int knapSack(int[] profits, int[] weights, int capacity) {
-   return this.knapSack(profits, weights,  capacity, 0);
+ public static int knapSack(int[] profits, int[] weights, int capacity) {
+   return knapSack(profits, weights,  capacity, 0);
  }
 }

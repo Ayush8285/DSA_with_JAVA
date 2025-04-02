@@ -1,6 +1,6 @@
 class Main {
   public static void main(String[] args) {
-    Main recursion = new Main();
+    BMain recursion = new BMain();
     var rec = recursion.fibonacci(-2);
     System.out.println(rec);
 

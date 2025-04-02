@@ -1,5 +1,19 @@
 public class MinCostToReachLastCell {
-  public int findMinCost(int[][] cost, int row, int col) {
+
+  public static void main(String[] args) {
+    int[][] cost = {
+      {1, 2, 3},
+      {4, 8, 2},
+      {1, 5, 3}
+    };
+    int row = cost.length - 1;
+    int col = cost[0].length - 1;
+    System.out.println("Minimum cost to reach last cell: " + findMinCost(cost, row, col));
+  }
+
+  //Diagonally not allowed
+
+  public static int findMinCost(int[][] cost, int row, int col) {
     if (row == -1 || col == -1 ) {
       return Integer.MAX_VALUE;
     }

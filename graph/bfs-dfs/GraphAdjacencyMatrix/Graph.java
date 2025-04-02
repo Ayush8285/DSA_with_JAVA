@@ -3,10 +3,10 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 public class Graph {
-  ArrayList<GraphNode> nodeList = new ArrayList<GraphNode>();
+  ArrayList<WeightedNode> nodeList = new ArrayList<WeightedNode>();
   int[][] adjacencyMatrix;
 
-  public Graph(ArrayList<GraphNode> nodeList) {
+  public Graph(ArrayList<WeightedNode> nodeList) {
     this.nodeList = nodeList;
     adjacencyMatrix = new int[nodeList.size()][nodeList.size()];
   }
@@ -34,8 +34,8 @@ public class Graph {
   }
 
   // get Neighbors
-  public ArrayList<GraphNode> getNeighbors(GraphNode node) {
-    ArrayList<GraphNode> neighbors = new ArrayList<GraphNode>();
+  public ArrayList<WeightedNode> getNeighbors(WeightedNode node) {
+    ArrayList<WeightedNode> neighbors = new ArrayList<WeightedNode>();
     int nodeIndex = node.index;
     for (int i=0; i<adjacencyMatrix.length; i++) {
       if(adjacencyMatrix[nodeIndex][i]==1) {
@@ -47,15 +47,15 @@ public class Graph {
   }
 
   // BSF internall
-  void bfsVisit(GraphNode node) {
-    LinkedList<GraphNode> queue = new LinkedList<GraphNode>();
+  void bfsVisit(WeightedNode node) {
+    LinkedList<WeightedNode> queue = new LinkedList<WeightedNode>();
     queue.add(node);
     while(!queue.isEmpty()) {
-      GraphNode currentNode = queue.remove(0);
+      WeightedNode currentNode = queue.remove(0);
       currentNode.isVisited = true;
       System.out.print(currentNode.name + " ");
-      ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
-      for (GraphNode neighbor: neighbors) {
+      ArrayList<WeightedNode> neighbors = getNeighbors(currentNode);
+      for (WeightedNode neighbor: neighbors) {
         if (!neighbor.isVisited) {
           queue.add(neighbor);
           neighbor.isVisited = true;
@@ -65,22 +65,22 @@ public class Graph {
   }
 
   public void bfs() {
-    for (GraphNode node : nodeList) {
+    for (WeightedNode node : nodeList) {
       if(!node.isVisited) {
         bfsVisit(node);
       }
     }
   }
 
-  void dfsVisit(GraphNode node) {
-    Stack<GraphNode> stack = new Stack<>();
+  void dfsVisit(WeightedNode node) {
+    Stack<WeightedNode> stack = new Stack<>();
     stack.push(node);
     while(!stack.isEmpty()) {
-      GraphNode currentNode = stack.pop();
+      WeightedNode currentNode = stack.pop();
       currentNode.isVisited = true;
       System.out.print(currentNode.name + " ");
-      ArrayList<GraphNode> neighbors = getNeighbors(currentNode);
-      for (GraphNode neighbor : neighbors) {
+      ArrayList<WeightedNode> neighbors = getNeighbors(currentNode);
+      for (WeightedNode neighbor : neighbors) {
         if (!neighbor.isVisited) {
           stack.push(neighbor);
           neighbor.isVisited = true;
@@ -91,7 +91,7 @@ public class Graph {
   }
 
   void dfs() {
-    for (GraphNode node : nodeList) {
+    for (WeightedNode node : nodeList) {
       if(!node.isVisited) {
         dfsVisit(node);
       }
