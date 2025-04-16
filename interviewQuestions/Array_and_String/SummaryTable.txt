@@ -1,0 +1,39 @@
+# | Problem                                 | Category                  | Technique / Strategy                   | Time Complexity | Space Complexity                 | Key Insight / Notes
+1 | 🔄 Find Duplicate Number               | Array/Hashing             | Use HashSet or Tortoise-Hare (Floyd)   | O(n)            | O(n) (hashing) / O(1) (Floyd)    | Detect duplicate using a set or cycle detection
+2 | 🔢 Kadane’s Algorithm                  | Maximum Subarray Sum      | Dynamic Programming / Sliding Window   | O(n)            | O(1)                             | Track max subarray sum with running total
+3 | 🔠 Longest Substring Without Repeating | String/Hashing            | Sliding Window + HashSet               | O(n)            | O(min(n,m))                      | Track unique substring length with sliding window technique
+4 | 🔀 Merge Intervals                     | Interval Problems         | Sort + Merge Overlapping Intervals     | O(n log n)      | O(n)                             | Sort intervals and merge if overlapping
+5 | 🔷 Move Zeros to the End               | Array Manipulation        | Swap + Two Pointer Approach            | O(n)            | O(1)                             | Shift zeros to the end while maintaining relative order
+6 | 📊 Product Except Self                 | Array/Prefix & Suffix     | Prefix and Suffix Arrays               | O(n)            | O(1)(no extra array for output)  | Product array without self using prefix/suffix product arrays
+7 | 🔄 Rotate Matrix 90 Degrees            | Matrix Manipulation       | Layer by Layer Rotation                | O(n^2)          | O(1)                             | Rotate in-place by layer using a temporary variable
+8 | 🔢 Two Sum Problem                     | Array/Hashing             | Hash Map for Lookup                    | O(n)            | O(n)                             | Store complement in hash map and check as you iterate
+
+
+
+
+
+🔍 Key Insights (Visual):
+Problem                                                 | Visual Idea
+Find Duplicate                                          | Using set to detect repeated elements
+Kadane's Algorithm                                      | Track max sum subarray using running totals
+Longest Substring Without Repeating                     | Sliding window, extend right pointer, shrink left when duplicate found
+Merge Intervals                                         | Sort by start, merge intervals if overlaps are detected
+Move Zeros to the End                                   |  Two pointers: one for non-zero elements, one for zero
+Product Except Self                                     | Two arrays for prefix/suffix products, or calculate on the fly
+Rotate Matrix 90°                                       | Swap elements layer by layer
+Two Sum                                                 | Map complements to indices while iterating
+
+
+
+
+
+📎 Sample Outputs:
+Problem                                  | Input Example                             | Output Example
+Find Duplicate Number                    | [1, 2, 3, 4, 2]                           | 2
+Kadane’s Algorithm                       | [-2, 1, -3, 4, -1, 2, 1, -5, 4]           | 6 (subarray: [4, -1, 2, 1])
+Longest Substring Without Repeating      | "abcabcbb"                                | 3 (substring: "abc")
+Merge Intervals                          | [[1,3],[2,6],[8,10],[15,18]]              | [[1,6], [8,10], [15,18]]
+Move Zeros to the End                    | [0, 1, 0, 3, 12]                          | [1, 3, 12, 0, 0]
+Product Except Self                      | [1,2,3,4]                                 | [24, 12, 8, 6]
+Rotate Matrix 90 Degrees                 | [[1,2,3],[4,5,6],[7,8,9]]                 | [[7,4,1],[8,5,2],[9,6,3]]
+Two Sum                                  | [2, 7, 11, 15], target = 9                | [0, 1] (since nums[0] + nums[1] = 9)

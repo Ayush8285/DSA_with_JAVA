@@ -1,0 +1,22 @@
+  # | Problem                   | Category     | Approach / Strategy                  | Time Complexity | Space Complexity | Key Idea / Transition
+  1 | 0/1 Knapsack              | DP           | Bottom-up DP, Choose include/exclude | O(n * W)        | O(n * W)         | Use a table to track max value with/without including an item
+  2 | Coin Change (Min Coins)   | DP           | Bottom-up DP with 1D array           | O(amount * n)   | O(amount)        | Try all coins for each amount
+  3 | Longest Increasing Subseq | DP           | DP with nested loop                  | O(n²)           | O(n)             | dp[i] = longest subseq ending at i
+  4 | Edit Distance             | DP           | 2D DP table with char comparisons    | O(m * n)        | O(m * n)         | Insert/Delete/Replace → pick min operations
+  5 | Rod Cutting               | DP           | Unbounded knapsack style             | O(n²)           | O(n)             | Try all cut combinations for max price
+  6 | Combination Sum           | Backtracking | DFS + Pruning                        | O(2^n) approx   | O(n)             | Recursive explore valid sums (reusable elements)
+  7 | Rat in a Maze             | Backtracking | DFS with direction movement          | O(4^(n^2))      | O(n^2)           | Move in all directions with safety check
+  8 | Jump Game                 | Greedy       | Track farthest index reachable       | O(n)            | O(1)             | Maximize reach without falling short
+  9 | Activity Selection        | Greedy       | Sort by end time + greedy pick       | O(n log n)      | O(n)             | Always pick the earliest finishing activity
+
+
+
+
+✅ Legend:
+n = number of items / elements
+
+W = max weight / target
+
+m, n = lengths of strings (Edit Distance)
+
+amount = target sum in Coin Change

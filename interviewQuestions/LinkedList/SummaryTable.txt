@@ -1,0 +1,32 @@
+# | Problem                              | Category               | Technique / Strategy                  | Time Complexity  | Space Complexity  | Key Insight / Notes
+1 | 🔀 Intersection of Two Linked Lists | Linked List            | Two pointers (switch head at end)     | O(m + n)         | O(1)              | When pointers meet → intersection node
+2 | 🔁 Linked List Cycle Detection      | Floyd’s Algorithm      | Slow/Fast pointer                     | O(n)             | O(1)              | Detect cycle if fast meets slow
+3 | 🔁 Detect Cycle + Find Start Node   | Floyd + Reset pointer  | Reset one pointer, move both one step | O(n)             | O(1)              | Meet point = k steps from cycle start
+4 | 🔀 Merge Two Sorted Lists           | Linked List Merge      | Dummy node + iteration                | O(m + n)         | O(1)              | Merge step-by-step like in merge sort
+5 | 🔁 Reverse Linked List              | Iterative / Recursion  | Change .next pointers                 | O(n)             | O(1)              | Prev, curr, next pointers
+6 | 🔍 Remove Nth Node from End         | Two pointers + dummy   | 1st pointer n steps ahead             | O(n)             | O(1)              | Use dummy node to simplify edge cases
+7 | 🔁 Palindrome Linked List           | Midpoint + reverse     | Find mid, reverse 2nd half, compare   | O(n)             | O(1)              | Reverse second half to compare
+
+
+
+
+
+🧠 Visual Clues:
+Problem                     | Visual Idea
+Intersection                | A→B→C→D→E ←F←G (D→E common)
+Cycle Detection             | Fast/slow pointer loop (🐢 meets 🐇)
+Merge Sorted List           | 1→3→5 and 2→4→6 → merge to 1→2→3→4→5→6
+Reverse Linked List         | 1→2→3→4 becomes 4→3→2→1
+Palindrome Check            | 1→2→2→1 (reverse 2nd half and match)
+Remove Nth from End         | Use 2 pointers with n steps gap
+
+
+
+📎 Sample Outputs:
+Problem                                 | Input Example                         | Output Example
+Intersection LL                         | HeadA: A→B→C, HeadB: X→Y→C            | Node C (intersection)
+Linked List Cycle Detection             | 1→2→3→4→5→2 (loop)                    | true
+Merge Sorted Lists                      | [1,2,4], [1,3,4]                      | [1,1,2,3,4,4]
+Reverse Linked List                     | [1,2,3,4]                             | [4,3,2,1]
+Remove Nth Node from End                | [1,2,3,4,5], n = 2                    | [1,2,3,5]
+Palindrome Linked List                  | [1,2,2,1]                             | true

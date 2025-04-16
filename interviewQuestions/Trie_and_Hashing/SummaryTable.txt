@@ -1,0 +1,5 @@
+# | Problem               | Type       | Strategy                  | Time Complexity | Space Complexity | Key Insight
+1 | Trie (Prefix Tree)    | Trie       | Character tree            | O(m)            | O(26 × n × m)    | Each node has 26 children
+2 | Group Anagrams        | Hashing    | Sort + group by key       | O(n × k log k)  | O(nk)            | Use sorted string as hash key
+3 | Longest Prefix Match  | String     | Shrink prefix until match | O(n × m)        | O(1)             | Keep trimming prefix with each string
+4 | Subarray Sum Equals K | Prefix Sum | HashMap of prefix sums    | O(n)            | O(n)             | Sum[i] - k exists means subarray sum == k

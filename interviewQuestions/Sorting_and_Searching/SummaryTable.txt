@@ -1,0 +1,20 @@
+    # |  Problem                           | Type            | Technique / Strategy         | Time Complexity              | Space Complexity | Key Points / Insight
+    1 | 🔍 Binary Search in Rotated Array  | Searching      | Modified Binary Search       | O(log n)                     | O(1)              | Check sorted half to adjust search
+    2 | 🔍 Search in 2D Matrix             | Searching      | 1D Binary Search on 2D array | O(log (m × n))               | O(1)              | Treat matrix as 1D using row/col mapping
+    3 | 🔍 Kth Largest Element in Array    | Searching/Heap | Min Heap of size k           | O(n log k)                   | O(k)              | Maintain k largest elements with min-heap
+    4 | 🔀 Merge Sort                      | Sorting        | Divide & Conquer             | O(n log n)                   | O(n)              | Stable sort using temp arrays
+    5 | ⚡ Quick Sort                      | Sorting        | Partition (Divide & Conquer) | O(n log n) avg / O(n²) worst | O(log n)          | In-place, unstable, fast in practice
+
+
+
+
+
+🔍 Search Visualization Highlights:
+Binary Search in Rotated Array: Identify sorted side, eliminate half.
+2D Matrix Search: Map index → row = mid / n, col = mid % n.
+Kth Largest: Heap keeps only k largest numbers.
+
+
+🔀 Sort Visualization Highlights:
+Merge Sort: Top-down splitting, then merging sorted halves.
+Quick Sort: Choose pivot → partition → recurse on left/right.

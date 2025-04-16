@@ -1,0 +1,45 @@
+# | Problem / Algorithm                     | Category                  | Technique / Strategy                      | Time Complexity  | Space Complexity  | Key Insight / Notes
+1 | 🟢 Inorder / Pre / Postorder           | Tree Traversal            | Recursion / Stack                         | O(n)             | O(h)              | DFS traversals (LNR, NLR, LRN), h = height
+2 | 🌊 Level Order Traversal               | Tree Traversal            | BFS with Queue                            | O(n)             | O(n)              | Level-by-level using queue
+3 | 🔽 Lowest Common Ancestor (LCA)        | Tree / Recursion          | Traverse subtree, return where both found | O(n)             | O(h)              | Check left/right for both nodes
+4 | ⚖️ Check if Tree is Balanced           | Tree / DFS                | Height check during DFS                   | O(n)             | O(h)              | Return height if balanced, else -1
+5 | 📏 Diameter of Binary Tree             | Tree / DFS                | Max depth left + right at each node       | O(n)             | O(h)              | Update max diameter globally
+6 | 🔁 Detect Cycle in Graph (DFS)         | Graph                     | DFS with visited and recursion stack      | O(V + E)         | O(V)              | Cycle = visiting a node already in recursion stack
+7 | 🔁 Detect Cycle in Graph (BFS)         | Graph                     | Kahn’s Algo (BFS with indegree)           | O(V + E)         | O(V)              | If all nodes not processed → cycle exists
+8 | 🧱 Topological Sort | Graph (DAG)      | DFS + Stack               | Kahn's Algo                               | O(V + E)         | O(V)              | Linear ordering of nodes in a DAG
+9 | 📍 Dijkstra’s Algorithm                | Graph (Weighted)          | Min Heap (Priority Queue)                 | O((V + E) log V) | O(V)              | Greedy shortest path from source (non-negative weights)
+
+
+
+
+
+
+🔍 Visual Clues:
+Inorder: Left → Root → Right
+Preorder: Root → Left → Right
+Postorder: Left → Right → Root
+Level Order: Layer-by-layer using queue
+LCA: Recurse left/right, return common node
+Balanced Tree: Heights of subtrees differ by ≤ 1
+Diameter: Longest path between any two nodes
+Cycle Detection (DFS): Revisit in call stack
+Topological Sort: No edges from later to earlier node
+Dijkstra: Expand nearest unvisited node with shortest distance
+
+
+
+
+
+
+
+
+
+Problem                 | Input Example / Setup             | Output Format / Example
+Inorder Traversal       | Tree with root = 1                | [Left, Root, Right] e.g., [2, 1, 3]
+Level Order             | Binary tree                       | [[1], [2,3], [4,5]]
+LCA                     | Tree + nodes p=5, q=1             | Lowest Common Ancestor = 3
+Balanced Tree           | Any binary tree                   | true / false
+Diameter                | Tree of 4+ nodes                  | Diameter = 3 (in terms of edges)
+Detect Cycle (Graph)    | Directed Graph                    | true / false
+Topological Sort        | DAG: 1→2, 2→3, 3→4                | [1,2,3,4]
+Dijkstra                | Weighted Graph from source 0      | Shortest distances: [0, 2, 4, ...]

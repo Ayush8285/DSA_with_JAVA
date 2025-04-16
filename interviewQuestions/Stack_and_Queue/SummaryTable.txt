@@ -1,0 +1,37 @@
+#  | Problem                             | Category              | Technique / Strategy                       | Time Complexity   | Space Complexity  | Key Insight / Notes
+1  | ✅ Valid Parentheses               | Stack                 | Push open, match close with top            | O(n)              | O(n)              | Match pairs using LIFO structure
+2  | 🔢 Reverse Polish Notation (RPN)   | Stack                 | Evaluate using operand stack               | O(n)              | O(n)              | Use stack, pop two for each operator
+3  | 🔁 Implement Stack using Queues    | Queue Emulation       | Push O(n), pop O(1) or vice versa          | O(n) (worst case) | O(n)              | Simulate LIFO with 2 queues
+4  | 🔁 Implement Queue using Stacks    | Stack Emulation       | Push in one, pop via two stacks            | O(1) amortized    | O(n)              | Use 2 stacks: input/output stack
+5  | 🔓 Decode String (e.g. "3[a2[c]]") | Stack + Recursion     | Stack for strings + counts                 | O(n * k)          | O(n)              | Keep chars/counts in parallel stacks
+6  | 📉 Min Stack                       | Stack with Min        | Keep extra stack for min                   | O(1) for all ops  | O(n)              | Track minimum while pushing
+7  | 🌡️ Daily Temperatures              | Monotonic Stack       | Store indices, pop while current > top     | O(n)              | O(n)              | Next greater element variation
+8  | ➡️ Next Greater Element            | Monotonic Stack       | Iterate reverse, stack stores future vals  | O(n)              | O(n)              | For each element, pop until larger found
+9  | 📏 Largest Rectangle Histogram     | Monotonic Stack       | Store heights with index                   | O(n)              | O(n)              | Area = height × width from nearest smaller bars
+10 | 🔲 Sliding Window Maximum          | Deque / Monotonic Q   | Max Queue (store decreasing order)         | O(n)              | O(k)              | Remove smaller elements from back of deque
+
+
+
+
+🔍 Key Concepts (Visual):
+Valid Parentheses: Push open brackets, pop on close, ensure stack empty at end.
+RPN: Operate in postfix form → push numbers, pop 2 on operators.
+Decode String: Use stack to handle nesting, multiply characters by counts.
+Monotonic Stack: Use stack to track decreasing/increasing sequences.
+Sliding Window: Maintain deque for max, drop out-of-window and smaller elements.
+
+
+
+
+
+
+Problem                     | Sample Input                       | Sample Output
+Valid Parentheses           | "()[]{}"                           | true
+RPN                         | ["2","1","+","3","*"]              | 9
+Decode String               | "3[a2[c]]"                         | "accaccacc"
+Min Stack                   | Push(5), Push(3), Pop(), GetMin()  | Min = 5
+Daily Temperatures          | [73,74,75,71,69,72,76,73]          | [1,1,4,2,1,1,0,0]
+Next Greater Element        | [2,1,2,4,3]                        | [4,2,4,-1,-1]
+Largest Rectangle           | [2,1,5,6,2,3]                      | 10
+Sliding Window Max          | nums = [1,3,-1,-3,5,3,6,7], k=3    | [3,3,5,5,6,7]
+
